@@ -78,7 +78,10 @@ y operaciones entre ellos.
     \end{itemize}
 
     Ya teniendo claro esto $\dots$
-    $S = \{ w \mid w \in \{ ba,a\}\}$
+
+    $S = \{ w \in \Sigma^{*} \mid w \in \{ ba,a\}\}$
+
+    $\therefore L = S^{*}$
 \end{solution}
 
 \question La siguiente notaci\'on $|L_{1}L_{2}| = |L_{1}||L_{2}|$ denota que el {\it número de cadenas en la concatención}
@@ -87,4 +90,28 @@ $L_{1}L_{1}$ {\it es el mismo que el producto de dos n\'umeros $|L_{1}|$} y $|L_
 Si esta afirmaci\'on siempre es verdad para cualesquiera dos lenguajes, da argumentos
 formales para probarlo y si no, muestra dos lenguajes $|L_{1}|$ y $|L_{2}|$ tales que $|L_{1}L_{2}| \neq |L_{1}||L_{2}|$ (para el
 contraejemplo, puedes considerar que los lenguajes pertenecen a $\Sigma^{*}$ donde $\Sigma = \{a,b\}$).
+
+\begin{solution}
+    Antes que nada definamos la concatenacion de lenguajes.
+    \begin{equation}
+        A \cdot B = AB = \{ wx \mid w \in A \wedge x \in B\}
+    \end{equation}
+    Para el caso base imaginemos que $L_{2} = \{\epsilon\}$ Por ende $L_{1}L_{2} = L_{1}\{\epsilon\}$
+
+    $|L_{1}\{\epsilon\}| = |L_{1}|$ 
+
+    Si vemos la longitud de $\{\epsilon\} = 1$ Por ende \\
+    $|L_{1}\{\epsilon\}| = |L_{1}| \cdot 1 = L_{1}$
+
+    Ya habiendo cubierto el caso base ahora\dots \\
+
+    $(\{w\}L_{1})L_{2} = |{w}(L_{1}L_{2})| = 1 \cdot |L_{1}L_{2}|$
+
+    $|L_{1}||L_{2}| = |(\{w\}L_{1})| \cdot |L_{2}| = 1 \cdot |L_{2}| \cdot |L_{2}|$
+
+    $\therefore$ La hipotesis de inducci\'on se cumple correctamente.
+    
+\end{solution}
 \end{questions}
+
+
