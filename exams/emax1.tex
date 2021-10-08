@@ -10,7 +10,20 @@ Describe con palabras (en español) las características de las cadenas en cada 
 Describe las cadenas que contienen los lenguajes $L_{2} \cap L_{3}$ y $L_{1} \cup L_{3}$.
 
 \begin{solution}
-    
+    \begin{itemize}
+        \item $L_{1} =$ Este lenguaje siempre va a ser de n\'umero impar, contendra
+        cadenas concatenadas de 'aaa' multiples veces o no por ende puede la longitud de la cadena es multiple de 3 o bien 0 cuando la cadena es $\epsilon$.
+
+        \item $L_{2} =$ Las cadenas estan formadas por wxyz donde cada uno de esos simbolos contienen ya sea una a o una b por ende la cadea contiene a's, b's o bien a's y b's cabe recalcar que 
+        las cadenas pueden tener una longitud max de 4.
+        \item $L_{3} =$ Las cadenas en este lenguaje son la concatención de las cadenas formadas por el 
+        lenguaje $L_{2}$ o bien $(wxyz)^{n}$ donde n esta en los n\'umeros naturales y w,x,y,z toman el valor de a o b.
+        \item $L_{2} \cap L_{3} = $ Todas las cadenas tienen una longitud max de 4 y pueden contener a's, b's o bien ambos o bien nada $\epsilon$.
+
+        \item $L_{1} \cup L_{3} = $ $L_{1}$ esta contenida en $L_{3}$ por ende se pueden formar todas las cadenas que 
+        cumplan con las condiciones de $L_{3}$.
+
+    \end{itemize}
     
     
 \end{solution} 
@@ -24,13 +37,24 @@ Demuestra que $L^{*}$ es el conjunto de cadenas donde el n\'umero de b's es par.
     Por ende: \\
     $\Sigma = \{\epsilon, a,b\}$
 
-    $L_{1} = \{w \in \Sigma^{*}\mid \#_{a}(w)$ es impar \} \\
+    $L_{1} = \{w \in \Sigma^{*}\mid \#_{a}(w)$ es impar $\}$
     $L_{2} = \{w \in \Sigma^{*}\mid \#_{b}(w)$ es par \} \\
 
     Por ende podriamos reescribir L como: \\
-    $L = \{w \in \{a,b\}^{*} \mid w \in (L_{1} \cup L_{2})\}$
+    $L = \{w \in \{a,b\}^{*} \mid w \in (L_{1} \cap L_{2})\}$
+    \\
 
-    Si 
+    y a $L^{*}$ como $L^{*} = \cup^{\infty}_{i=0} L^{i} = L^{0} \cup L^{1} \cup L^{2} \cup L^{3} ... L^{\infty}$ 
+    o bien \\ $L^{*} = \cup^{\infty}_{i=0} L^{i} = L^{0} \cup L \cup LL \cup LLL ... L^{\infty}$
+
+    En el caso base para el lenguaje L, w = $\epsilon$ en este caso el numero de b's es par ya que 0 es par, si procedemos a armar una cadena 
+    no vacia por definicion $L = \{w \in \{a,b\}^{*} \mid w \in (L_{1} \cap L_{2})\}$ ya que w debe cumplir con las condiciones
+    para $L_{2}$ el numero de b's ser\'a par tambien por ende no se pueden crear cadenas con L donde w tenga un numero de b's impar \\
+
+    Ya que todo numero par sumado con otro par sigue siendo par y ya que la cantidad de a's no afecta a las propiedades de $L_{2}$
+    gracias a la intersecci\'on $\{w \in (L_{1} \cap L_{2})\}$, podemos asegurar que cualquier concatenacion de una cadena w consigo misma $w^n$ seguir\'a teniendo 
+    un numero par de b's. \\
+    $\therefore L^{*}$  siempre tendra un numero par de b's para cualquier concatenacion de L's.
 
     
 \end{solution} 
@@ -40,6 +64,22 @@ uno de estos lenguajes tales que no terminan en b y no tienen a bb como subcaden
 
 Define de forma {\bf no} recursiva a un lenguaje S de modo que $L = S^{*}$ es decir usando lenguajes
 y operaciones entre ellos.
+
+\begin{solution}
+    \\
+    Antes que nada escribire algunas definiciones.
+    Definiciones: \\
+    \begin{itemize}
+        \item Decimos que v es una subcadena de u si existen cadenas $x,y \in \Sigma^{*}$ tales que u = xvy.
+        \item Decimos que v es una subcadena propia de u si es subcadena de u y además $v \neq \epsilon, v \neq u$
+        \item Un sufijo de u es una cadena v tal que u = wv para alguna cadena $w \in \Sigma$.
+        Se dice que v es un sufijo propio si $v \neq u$.
+        y además $v \neq \epsilon, v \neq u$.
+    \end{itemize}
+
+    Ya teniendo claro esto $\dots$
+    $S = \{ w \mid w \in \{ ba,a\}\}$
+\end{solution}
 
 \question La siguiente notaci\'on $|L_{1}L_{2}| = |L_{1}||L_{2}|$ denota que el {\it número de cadenas en la concatención}
 $L_{1}L_{1}$ {\it es el mismo que el producto de dos n\'umeros $|L_{1}|$} y $|L_{2}|$.
