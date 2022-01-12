@@ -1,0 +1,80 @@
+!TEX root = main.tex
+\renewcommand{\labelenumi}{\alph{enumi})}
+\section*{Semanal 9}
+\textbf{1. A partir de la suguiente gram\'atica $G_{1}$, elimina todas las $\epsilon$-producci\'ones}
+\\
+\begin{center}
+    $S \rightarrow ABS | \epsilon$
+
+    $A \rightarrow 01 | \epsilon$
+
+    $B \rightarrow 1B | 0$
+
+\end{center}
+
+Crearemos el conjunto Anul con las variables que tienen a $\epsilon$ como producci ́on.
+
+Anul = \{S\} $\cup$ \{A\} = \{S, A\}
+
+Las $\epsilon$ van a desaparecer y se agregaran nuevas terminaciones haciendo reemplazo de las literales no termiales con $\epsilon$ por la izq, der y ambas.
+
+
+
+Reemplazo y adici\'on:
+\begin{center}
+    $S \rightarrow ABS | \epsilon BS |  AB\epsilon | \epsilon B\epsilon $
+
+    $A \rightarrow 01$
+
+    $B \rightarrow 1B | 0$
+
+\end{center}
+
+As\'i terminan las reglas de producci\'on:
+
+\begin{center}
+    $S \rightarrow ABS | BS |  AB | B$
+
+    $A \rightarrow 01$
+
+    $B \rightarrow 1B | 0$
+
+\end{center}
+
+
+\textbf{2. A partir de la siguiente gram\'atica $G_{2}$, elimina todas las producci\'ones unitarias.}
+
+\begin{center}
+    $S \rightarrow A$
+
+    $A \rightarrow BaC | b | aC$
+
+    $B \rightarrow A | BC | C$
+
+    $C \rightarrow bbb | BAB | A | BA | AB$
+\end{center}
+
+Iniciemos moviendo las producci\'ones de A a S, B y C:
+
+\begin{center}
+    $S \rightarrow BaC | b | aC$
+
+    $A \rightarrow BaC | b | aC$
+
+    $B \rightarrow BaC | b | aC | BC | C$    
+
+    $C \rightarrow bbb | BAB | BaC | b | aC | BA | AB$
+\end{center}
+
+Posterior mente moveremos C a B removiendo las terminaciones repetidas para obtener:
+
+\begin{center}
+    $S \rightarrow BaC | b | aC$
+
+    $A \rightarrow BaC | b | aC$
+
+    $B \rightarrow BaC | b | aC | BC | bbb | BAB | BA | AB$    
+
+    $C \rightarrow bbb | BAB | BaC | b | aC | BA | AB$
+\end{center}
+
